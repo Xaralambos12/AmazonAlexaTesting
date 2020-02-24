@@ -1,0 +1,7 @@
+const GetNewFactHandler = {
+  canHandle(handlerInput) {
+    const request = handlerInput.requestEnvelope.request;
+    // checks request type
+    return request.type === 'LaunchRequest'    //When i say 'open'
+      || (request.type === 'IntentRequest'
+        && request.intent.name === 'GetNewFactIntent');
